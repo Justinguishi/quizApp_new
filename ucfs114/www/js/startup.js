@@ -1,4 +1,4 @@
-
+var httpPortNumber;
 	
 	function trackAndCircle() {
 		trackLocation();
@@ -16,6 +16,7 @@
 	document.addEventListener('DOMContentLoaded',function(){
 		//trackAndCircle();
 		getPort();
+		//startFormDataLoad();
 		loadW3HTML();
 	},false);
 }	     
