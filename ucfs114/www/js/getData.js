@@ -1,10 +1,9 @@
 var xhrFormData;
-
+var quizPoints;
 var httpPortNumber;
 
 function startFormDataLoad(){
 	getPort();
-	
 	xhrFormData = new XMLHttpRequest(); 
 	var url = 'http://developer.cege.ucl.ac.uk:'+ httpPortNumber + "/getQuizPoints/"+ httpPortNumber;  
 	alert(url);
@@ -26,14 +25,15 @@ function loadFormData(formData) {
  
       // convert the text received from the server to JSON  
       var formJSON = JSON.parse(formData); 
-	  var quizPoints=formJSON;
+	  quizPoints=formJSON;
       // load the geoJSON layer 
       formLayer = L.geoJson(formJSON,{ 
 	  pointToLayer: function (feature, latlng) 
 	  {
               // in this case, we build an HTML DIV string 
               // using the values in the data 
-              var htmlString = "<DIV id='popup'"+ feature.properties.question_title + "><h2>" + feature.properties.quetion_title + "</h2><br>"; 
+             // var htmlString = "<DIV id='popup'"+ feature.properties.id + "><h2>" + feature.properties.quetion_title + "</h2><br>"; 
+			 var htmlString = "<DIV id='popup'" + feature.properties.id + "><h2>" + feature.properties.question_title + "</h2>";
               htmlString = htmlString + "<h3>"+feature.properties.question_text + "</h3><br>"; 
               htmlString = htmlString + "<input type='radio' name='answer' id =''answer_1'/>"+feature.properties.answer_1+"<br>"; 
               htmlString = htmlString + "<input type='radio' name='answer' id =''answer_2'/>"+feature.properties.answer_2+"<br>"; 
@@ -53,6 +53,7 @@ function loadFormData(formData) {
       mymap.fitBounds(formLayer.getBounds()); 
 	
 }
+
 
 function checkAnswer(questionID) { 
 
