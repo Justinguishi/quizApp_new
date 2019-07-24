@@ -20,6 +20,9 @@ function formDataResponse(){
 	loadFormData(formData);
 	}
 }
+
+
+//load the question that submitted before
 var formLayer;
 function loadFormData(formData) { 
  
@@ -32,19 +35,16 @@ function loadFormData(formData) {
 	  {
               // in this case, we build an HTML DIV string 
               // using the values in the data 
-             // var htmlString = "<DIV id='popup'"+ feature.properties.id + "><h2>" + feature.properties.quetion_title + "</h2><br>"; 
-			 var htmlString = "<DIV id='popup'" + feature.properties.id + "><h2>" + feature.properties.question_title + "</h2>";
-              htmlString = htmlString + "<h3>"+feature.properties.question_text + "</h3><br>"; 
-              htmlString = htmlString + "<input type='radio' name='answer' id =''answer_1'/>"+feature.properties.answer_1+"<br>"; 
-              htmlString = htmlString + "<input type='radio' name='answer' id =''answer_2'/>"+feature.properties.answer_2+"<br>"; 
-              htmlString = htmlString + "<input type='radio' name='answer' id =''answer_3'/>"+feature.properties.answer_3+"<br>"; 
-              htmlString = htmlString + "<input type='radio' name='answer' id =''answer_4'/>"+feature.properties.answer_4+"<br>"; 
              
-			 htmlString = htmlString + "<button onclick='checkAnswer(" + feature.properties.id + ");return false;'>Submit Answer</button>"; 
- 
-              // now include a hidden element with the answer 
-              // in this case the answer is alwasy the first choice 
-              // for the assignment this will of course vary - you can use feature.properties.correct_answer 
+			 var htmlString = "<DIV id='popup'" + feature.properties.id + "><h2>" + feature.properties.question_title + "</h2>";
+              htmlString = htmlString + "<h3>"+feature.properties.question_text + "</h3><br>";               
+			  htmlString = htmlString + "<input type='radio' name='answer' id='" + feature.properties.id + " 1'/>" + feature.properties.answer_1 + "<br>";
+			  htmlString = htmlString + "<input type='radio' name='answer' id='" + feature.properties.id + " 2'/>" + feature.properties.answer_2 + "<br>";
+		   	  htmlString = htmlString + "<input type='radio' name='answer' id='" + feature.properties.id + " 3'/>" + feature.properties.answer_3 + "<br>";
+			  htmlString = htmlString + "<input type='radio' name='answer' id='" + feature.properties.id + " 4'/>" + feature.properties.answer_4 + "<br><br />";
+			 
+			 
+			  htmlString = htmlString + "<button onclick='checkAnswer(" + feature.properties.id + ");return false;'>Submit Answer</button>";  
               htmlString = htmlString + "<div id=answer" + feature.properties.id + " hidden>" +feature.properties.correct_answer+"</div>"; 
               htmlString = htmlString + "</div>"; 
               return L.marker(latlng).bindPopup(htmlString); 
@@ -55,6 +55,11 @@ function loadFormData(formData) {
 }
 
 
+
+
+var postString;
+
+//this function will show the answer is right or wrong, no need to submit.
 function checkAnswer(questionID) { 
 
 	var answer = document.getElementById("answer"+questionID).innerHTML; 
@@ -62,10 +67,10 @@ function checkAnswer(questionID) {
  	var correctAnswer = false;  
  	var answerSelected = 0;  
  	for (var i=1; i < 5; i++) {   
- 		if (document.getElementById("answer_"+i).checked){    
+ 		if (document.getElementById(questionID + ' ' + i).checked){    
  			answerSelected = i;   
  		}   
- 		if ((document.getElementById("answer_"+i).checked) && (i == answer)) { 
+ 		if ((document.getElementById(questionID+ " " + i).checked) && (i == answer)){ 
  			alert ("Well done");    
  			correctAnswer = true;   
  		}  
