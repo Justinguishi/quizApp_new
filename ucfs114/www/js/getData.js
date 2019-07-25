@@ -28,7 +28,7 @@ function loadFormData(formData) {
  
       // convert the text received from the server to JSON  
       var formJSON = JSON.parse(formData); 
-	  quizPoints=formJSON;
+	  //quizPoints=formJSON;
       // load the geoJSON layer 
       formLayer = L.geoJson(formJSON,{ 
 	  pointToLayer: function (feature, latlng) 
