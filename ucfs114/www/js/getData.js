@@ -73,12 +73,13 @@ function checkAnswer(questionID) {
  		if ((document.getElementById(questionID+ " " + i).checked) && (i == answer)){ 
  			alert ("Well done");    
  			correctAnswer = true;   
+			
  		}  
  	}  
  	if (correctAnswer === false) {   
  		// they didn't get it right   
  		alert("Better luck next time");  
  	} 
-
+mymap.closePopup();
 }        
- mymap.closePopup();
+ 
