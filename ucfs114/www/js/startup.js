@@ -15,8 +15,9 @@ var httpPortNumber;
 	function startup(){
 	document.addEventListener('DOMContentLoaded',function(){
 		//trackAndCircle();
+		trackLocation();
 		getPort();
-		//startFormDataLoad();
 		loadW3HTML();
+		//startFormDataLoad();
 	},false);
 }	     

@@ -3,7 +3,7 @@ var quizPoints;
 var httpPortNumber;
 
 function startFormDataLoad(){
-	getPort();
+	
 	xhrFormData = new XMLHttpRequest(); 
 	var url = 'http://developer.cege.ucl.ac.uk:'+ httpPortNumber + "/getQuizPoints/"+ httpPortNumber;  
 	alert(url);
