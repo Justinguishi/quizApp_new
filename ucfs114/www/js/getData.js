@@ -68,7 +68,8 @@ function checkAnswer(questionID) {
  	var answerSelected = 0;  
  	for (var i=1; i < 5; i++) {   
  		if (document.getElementById(questionID + ' ' + i).checked){    
- 			answerSelected = i;   
+ 			answerSelected = i;
+			postString = postString + "&answer_selected=" + i;			
  		}   
  		if ((document.getElementById(questionID+ " " + i).checked) && (i == answer)){ 
  			alert ("Well done");    
@@ -81,5 +82,46 @@ function checkAnswer(questionID) {
  		alert("Better luck next time");  
  	} 
 mymap.closePopup();
+processAnswer(postString); 
 }        
  
+
+ 
+ function processAnswer(postString){
+
+	client = new XMLHttpRequest();
+
+	postString = postString + "&port_id=" + httpPortNumber;
+
+	url = "http://developer.cege.ucl.ac.uk:" + httpPortNumber + '/uploadAnswer';
+
+	client.open("POST", url, true);
+
+	client.onreadystatechange = answerUpload;
+
+	try {
+
+		client.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+	}
+
+	catch (e) {
+
+	}
+
+	client.send(postString);
+
+	}
+
+ 
+ function answerUpload(){
+
+	if (client.readyState === 4){
+
+		document.getElementById("showQuestion").innerHTML = client.responseText;
+
+		//GetCorrectAnswer();
+
+	}
+
+}
