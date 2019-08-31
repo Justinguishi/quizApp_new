@@ -15,12 +15,13 @@ var httpPortNumber;
 	function startup(){
 	document.addEventListener('DOMContentLoaded',function(){
 		//trackAndCircle();
-		
+		//getPort();
+		//get users' port number
 		trackLocation();
-		getPort();
+		//automatically get user location  
+		//getDistance2();
+		//startFormDataLoad();
 		loadW3HTML();
-	//	startFormDataLoad();
-		
 	},false);
 	
 }	     

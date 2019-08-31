@@ -4,6 +4,7 @@ var loadFormData;
 var formJSON;
 var formLayer;
 
+
 function startFormDataLoad(){
 	
 	xhrFormData = new XMLHttpRequest(); 
