@@ -18,8 +18,8 @@ function closestFormPoint(position){
 
 	//alert('calculating distance from points');
 
-	//minDistance=0.05  //when the user getting close to the specific quiz point within 50m, there is an alert and the quiz shows up automatically
-	minDistance=1000000000;    //10km is for testing   
+	minDistance=0.5  //when the user getting close to the specific quiz point within 500m, there is an alert and the quiz shows up automatically
+	//minDistance=10;    //10km is for testing   
 	closestFormPoint=0;
 	var userlat=position.coords.latitude;
 	var userlng=position.coords.longitude;
@@ -44,12 +44,19 @@ function closestFormPoint(position){
 	});
 }
 
+
+
+
+
+
 document.addEventListener('DOMContentLoaded',function()
 {
 	startFormDataLoad1();
 	getDistance2();
 	
 },false);
+
+
 
 
 function startFormDataLoad1(){
