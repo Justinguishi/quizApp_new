@@ -53,8 +53,7 @@ function loadFormData(formData) {
             }, 
         } ).addTo(mymap);  
       mymap.fitBounds(formLayer.getBounds()); 
-	  getDistance2();
-	//closestFormPoint();
+	  
 }
 
 

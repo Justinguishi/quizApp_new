@@ -44,13 +44,12 @@ function closestFormPoint(position){
 	});
 }
 
-
-
-
-
-//this function is used for getting the closest quiz point
-//you have to wait patiently here since the phone is a little bit old to load the function fastly
-//the codes here adapted from Week 6 Practical, author: Dr.	Claire Ellul
+document.addEventListener('DOMContentLoaded',function()
+{
+	startFormDataLoad1();
+	getDistance2();
+	
+},false);
 
 
 function startFormDataLoad1(){
@@ -63,10 +62,5 @@ function startFormDataLoad1(){
 	xhrFormData.send();   
 	} 
 
-document.addEventListener('DOMContentLoaded',function()
-{
-	startFormDataLoad1();
-	getDistance2();
-	closestFormPoint();
-	//closestFormPoint();
-},false);
+
+
