@@ -129,11 +129,13 @@
 		  <a class="mdl-navigation__link" href="" onclick="startFormDataLoad(); return false;"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>Load quiz point</a>
           <a class="mdl-navigation__link" href="" onclick='addPointLinePoly();return false;'><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>add PointLinePoly</a>
           <a class="mdl-navigation__link" href="" onclick='getEarthquakes();return false;'><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Get Earthquakes</a>
-          <a class="mdl-navigation__link" href="" onclick='trackLocation();return false;'><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>track Location</a>
+          <a class="mdl-navigation__link" href="" onclick='showRanking();return false;'><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>show ranking</a>
           <a class="mdl-navigation__link" href="" onclick='trackAndCircle();return false;'><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>trackandCircle</a>
-          <div class="mdl-layout-spacer"></div>
+          <a class="mdl-navigation__link" href="" onclick='showCorAnsNum();return false;'><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>show Correct Num</a> 
+
+		  <div class="mdl-layout-spacer"></div>
          
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span>help document</a>
+          <a class="mdl-navigation__link" href=""><a href="helpDocument_quiz.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span>help document</a>
         </nav>
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
@@ -165,7 +167,7 @@
 	<script src="js/uploadData.js"></script> 
 	<script src="js/getData.js"></script>
 	<script src="js/closestFormPoint.js"></script>
-
+	<script src="js/correctNumber.js"></script>
 	
 	<script>startup();</script>
 	

@@ -89,40 +89,25 @@ processAnswer(postString);
 
  
  function processAnswer(postString){
-
 	client = new XMLHttpRequest();
-
 	postString = postString + "&port_id=" + httpPortNumber;
-
 	url = "http://developer.cege.ucl.ac.uk:" + httpPortNumber + '/uploadAnswer';
-
 	client.open("POST", url, true);
-
 	client.onreadystatechange = answerUpload;
-
 	try {
-
 		client.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
 	}
-
 	catch (e) {
-
 	}
-
 	client.send(postString);
-
 	}
-
- 
  function answerUpload(){
-
 	if (client.readyState === 4){
-
 		document.getElementById("showQuestion").innerHTML = client.responseText;
-
-		//GetCorrectAnswer();
-
 	}
 
 }
+
+
+
+

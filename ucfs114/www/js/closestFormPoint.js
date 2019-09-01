@@ -20,7 +20,7 @@ function closestFormPoint(position){
 	closestFormPoint=0;
 	var userlat=position.coords.latitude;
 	var userlng=position.coords.longitude;
-	alert('latitude:'+ userlat + 'longitude:'+ userlng);
+	//alert('latitude:'+ userlat + 'longitude:'+ userlng);
 	alert('calculating distance from points,which is not stable, may takes a long time');
 	formLayer.eachLayer(function(layer){
 		distance1=calculateDistance(userlat,userlng,layer.getLatLng().lat,layer.getLatLng().lng,'K');
@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded',function()
 {
 	getPort();
 	getDistance2();
+	showCorAnsNum();
 	
 },false);
 
